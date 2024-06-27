@@ -344,7 +344,7 @@ instruments_data:
 	decay $19
 	sustain_volume_rate $4
 	release $04
-	vibrato_rate $e0
+	vibrato_rate $e4
 	pitch_vibrato $05
 	volume_vibrato $00
 	noise_flags $00
@@ -372,9 +372,9 @@ instruments_data:
 ;instrument_$25
 	attack $00
 	decay $00
-	sustain_volume_rate $7
+	sustain_volume_rate $f
 	release $00
-	vibrato_rate $00
+	vibrato_rate $80
 	pitch_vibrato $00
 	volume_vibrato $00
 	noise_flags $00
@@ -392,9 +392,9 @@ instruments_data:
 ;instrument_$27
 	attack $00
 	decay $00
-	sustain_volume_rate $7
+	sustain_volume_rate $f
 	release $00
-	vibrato_rate $00
+	vibrato_rate $80
 	pitch_vibrato $00
 	volume_vibrato $00
 	noise_flags $00

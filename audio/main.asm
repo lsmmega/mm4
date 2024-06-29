@@ -51,8 +51,7 @@ incsrc .\sfx\damage_enemy.asm
 pad $cf38
 incsrc .\sfx\explosion.asm
 incsrc .\sfx\gain_bar.asm
-;incsrc .\sfx\select_robot_master.asm
-pad $cf94
+incsrc .\sfx\select_robot_master.asm
 incsrc .\sfx\shoot_recoil.asm
 incsrc .\sfx\boss_door.asm
 incsrc .\sfx\password_wrong.asm
@@ -73,7 +72,7 @@ incsrc .\sfx\yoku_block.asm
 ;incsrc .\music\get_items.asm
 ;incsrc .\music\wily_map.asm
 ;incsrc .\music\cossack_map.asm
-;incsrc .\sfx\fully_charged_shoot.asm
+incsrc .\sfx\fully_charged_shoot.asm
 ;incsrc .\sfx\fully_pharaoh_shot.asm
 ;incsrc .\music\proto_whistle.asm
 pad $d41f

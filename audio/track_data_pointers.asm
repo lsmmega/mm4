@@ -93,8 +93,8 @@ track_data_start
 	dl sfx_explosion
 	dh sfx_gain_bar
 	dl sfx_gain_bar
-	;dh sfx_select_robot_master
-	;dl sfx_select_robot_master
+	dh sfx_select_robot_master
+	dl sfx_select_robot_master
 	dh sfx_shoot_recoil
 	dl sfx_shoot_recoil
 	dh sfx_boss_door
@@ -135,8 +135,8 @@ track_data_start
 	;dl music_cossack_map
 
 ;sfx
-	;dh sfx_fully_charged_shoot
-	;dl sfx_fully_charged_shoot
+	dh sfx_fully_charged_shoot
+	dl sfx_fully_charged_shoot
 	;dh sfx_fully_pharaoh_shot
 	;dl sfx_fully_pharaoh_shot
 

@@ -73,6 +73,7 @@ sfx_password_correct:
 	sfx_channel_flags_bits = $2
 	sfx_pulse2_command_flags $04
 	sfx_pulse2_command_flags_bits = $04
+	sfx_pulse2_volume $6
 	sfx_pulse2_note A#4
 
 ;7

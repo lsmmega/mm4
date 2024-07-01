@@ -55,18 +55,18 @@ track_data_start
 	;dl music_wily3
 
 ;sfx
-	;dh sfx_flash_stopper
-	;dl sfx_flash_stopper
-	;dh sfx_rain_flush
-	;dl sfx_rain_flush
-	;dh sfx_ring_boomerang
-	;dl sfx_ring_boomerang
-	;dh sfx_drill_bomb
-	;dl sfx_drill_bomb
-	;dh sfx_uncharged_pharaoh_shot
-	;dl sfx_uncharged_pharaoh_shot
-	;dh sfx_lighting
-	;dl sfx_lighting
+	dh sfx_flash_stopper
+	dl sfx_flash_stopper
+	dh sfx_rain_flush
+	dl sfx_rain_flush
+	dh sfx_ring_boomerang
+	dl sfx_ring_boomerang
+	dh sfx_drill_bomb
+	dl sfx_drill_bomb
+	dh sfx_uncharged_pharaoh_shot
+	dl sfx_uncharged_pharaoh_shot
+	dh sfx_lighting
+	dl sfx_lighting
 	dh sfx_routine_map
 	dl sfx_routine_map
 	dh sfx_water
@@ -77,8 +77,8 @@ track_data_start
 	;dl sfx_unused20
 	dh sfx_shoot
 	dl sfx_shoot
-	;dh sfx_charging_buster
-	;dl sfx_charging_buster
+	dh sfx_charging_buster
+	dl sfx_charging_buster
 	dh sfx_landing
 	dl sfx_landing
 	dh sfx_damage_mm
@@ -87,8 +87,8 @@ track_data_start
 	dl sfx_death
 	dh sfx_damage_enemy
 	dl sfx_damage_enemy
-	;dh sfx_fully_charging_buster
-	;dl sfx_fully_charging_buster
+	dh sfx_fully_charging_buster
+	dl sfx_fully_charging_buster
 	dh sfx_explosion
 	dl sfx_explosion
 	dh sfx_gain_bar
@@ -101,24 +101,24 @@ track_data_start
 	dl sfx_boss_door
 	dh sfx_password_wrong
 	dl sfx_password_wrong
-	;dh sfx_change_robot_master
-	;dl sfx_change_robot_master
-	;dh sfx_password_correct
-	;dl sfx_password_correct
-	;dh sfx_menu
-	;dl sfx_menu
-	;dh sfx_battan
-	;dl sfx_battan
-	;dh sfx_wire
-	;dl sfx_wire
+	dh sfx_change_robot_master
+	dl sfx_change_robot_master
+	dh sfx_password_correct
+	dl sfx_password_correct
+	dh sfx_menu
+	dl sfx_menu
+	dh sfx_battan
+	dl sfx_battan
+	dh sfx_wire
+	dl sfx_wire
 	dh sfx_teleport_in
 	dl sfx_teleport_in
 	;dh sfx_unused34
 	;dl sfx_unused34
-	;dh sfx_get_weapon_text
-	;dl sfx_get_weapon_text
-	;dh sfx_lab_alert
-	;dl sfx_lab_alert
+	dh sfx_get_weapon_text
+	dl sfx_get_weapon_text
+	dh sfx_lab_alert
+	dl sfx_lab_alert
 	;dh sfx_wily_castle_explosion
 	;dl sfx_wily_castle_explosion
 	;dh sfx_unused38

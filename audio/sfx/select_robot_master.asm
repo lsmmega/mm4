@@ -1,10 +1,10 @@
-incsrc .\scripts\audio.asm
 sfx_select_robot_master:
 ;1
 	sfx_priority $08
 	sfx_global_flags $6
 	sfx_global_flags_bits = $6
 	sfx_global_note_sustain_length $bf
+	sfx_global_transpose $03
 	sfx_global_transpose_note = $03
 	sfx_frames $04
 	sfx_channel_flags $3

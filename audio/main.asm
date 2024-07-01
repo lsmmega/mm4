@@ -64,7 +64,7 @@ incsrc .\sfx\teleport_in.asm
 pad $d099
 incsrc .\sfx\get_weapon_text.asm
 incsrc .\sfx\lab_alert.asm
-;incsrc .\sfx\wily_castle_explosion.asm
+incsrc .\sfx\wily_castle_explosion.asm
 ;incsrc .\unused\unused38.asm
 pad $d0f1
 incsrc .\sfx\yoku_block.asm
@@ -72,7 +72,7 @@ incsrc .\sfx\yoku_block.asm
 ;incsrc .\music\wily_map.asm
 ;incsrc .\music\cossack_map.asm
 incsrc .\sfx\fully_charged_shoot.asm
-;incsrc .\sfx\fully_pharaoh_shot.asm
+incsrc .\sfx\fully_pharaoh_shot.asm
 ;incsrc .\music\proto_whistle.asm
 pad $d41f
 incsrc .\sfx\ufo.asm

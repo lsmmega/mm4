@@ -119,8 +119,8 @@ track_data_start
 	dl sfx_get_weapon_text
 	dh sfx_lab_alert
 	dl sfx_lab_alert
-	;dh sfx_wily_castle_explosion
-	;dl sfx_wily_castle_explosion
+	dh sfx_wily_castle_explosion
+	dl sfx_wily_castle_explosion
 	;dh sfx_unused38
 	;dl sfx_unused38
 	dh sfx_yoku_block
@@ -137,8 +137,8 @@ track_data_start
 ;sfx
 	dh sfx_fully_charged_shoot
 	dl sfx_fully_charged_shoot
-	;dh sfx_fully_pharaoh_shot
-	;dl sfx_fully_pharaoh_shot
+	dh sfx_fully_pharaoh_shot
+	dl sfx_fully_pharaoh_shot
 
 ;music
 	;dh music_proto_whistle

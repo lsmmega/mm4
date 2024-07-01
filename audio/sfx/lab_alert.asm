@@ -5,7 +5,7 @@ sfx_lab_alert:
 	sfx_global_flags_bits = $6
 	sfx_global_note_sustain_length $ff
 	sfx_global_transpose $f1
-	sfx_global_transpose_note = -$f
+	sfx_global_transpose_note = -$0f
 	sfx_frames $30
 	sfx_channel_flags $6
 	sfx_channel_flags_bits = $6

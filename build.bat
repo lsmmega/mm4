@@ -7,5 +7,6 @@ bmp2nes gfx/obj/capsule/large_life_capsule.bmp
 bmp2nes gfx/obj/capsule/small_life_capsule.bmp
 bmp2nes gfx/obj/capsule/large_wpn_capsule.bmp
 bmp2nes gfx/obj/1up.bmp
+bmp2nes gfx/obj/ready.bmp
 asm6 main.asm mm4.nes
 @pause

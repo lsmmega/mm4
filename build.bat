@@ -6,5 +6,6 @@ bmp2nes gfx/obj/tank/e_tank.bmp
 bmp2nes gfx/obj/capsule/large_life_capsule.bmp
 bmp2nes gfx/obj/capsule/small_life_capsule.bmp
 bmp2nes gfx/obj/capsule/large_wpn_capsule.bmp
+bmp2nes gfx/obj/1up.bmp
 asm6 main.asm mm4.nes
 @pause

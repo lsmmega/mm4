@@ -1,4 +1,5 @@
 rom_obj := \
+	audio.o  \
 	header.o \
 	bank00.o \
 	bank01.o \
@@ -29,9 +30,6 @@ rom_obj := \
 	bank1A.o \
 	bank1B.o \
 	bank1C.o \
-	bank1D.o \
-	bank1E.o \
-	bank1F.o \
 	bank20.o \
 	bank21.o \
 	bank22.o \
@@ -83,4 +81,4 @@ mm4.nes: $(mm4_obj) \
 
 clean:
 	$(RM) $(rom_obj) \
-	mm4.nes
+	mm4.nes \

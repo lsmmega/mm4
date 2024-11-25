@@ -81,4 +81,4 @@ mm4.nes: $(mm4_obj) \
 
 clean:
 	$(RM) $(rom_obj) \
-	mm4.nes \
+	mm4.nes

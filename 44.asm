@@ -1,2 +1,3 @@
 .SEGMENT "BANK2C"
 .INCBIN "44/44.bin"
+.INCBIN "gfx/44/44.chr"

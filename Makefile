@@ -369,9 +369,6 @@ gfx8 := \
 gfx9 := \
 	gfx/9/9.bmp gfx/9/9.chr
 
-gfx9 := \
-	gfx/9/9.bmp gfx/9/9.chr
-
 gfx16 := \
 	gfx/16/16.bmp gfx/16/16.chr
 

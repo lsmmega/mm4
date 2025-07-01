@@ -1,3 +1,3 @@
 .SEGMENT "BANK2A"
-.INCBIN "42/42.bin"
-.INCBIN "gfx/42/42.chr"
+.INCBIN  "42/42.bin"
+.INCBIN  "gfx/42/42.chr"

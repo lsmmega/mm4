@@ -1,0 +1,18 @@
+.ENUM
+	background
+	wall
+	ladder
+	spikes
+	laddertop
+	doors
+	water
+	hidden
+	glide_right
+	shootable
+	glide_left
+	slippery
+	special
+	usused_0d
+	usused_0e
+	usused_0f
+.ENDENUM

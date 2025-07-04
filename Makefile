@@ -226,6 +226,7 @@ home := \
 	gfx/35/*.bmp
 
 36 := \
+	constants/* \
 	36.asm \
 	36/* \
 	gfx/36/*.bmp

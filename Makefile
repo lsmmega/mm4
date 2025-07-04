@@ -214,6 +214,7 @@ home := \
 	33/*
 
 34 := \
+	constants/* \
 	34.asm \
 	34/* \
 	gfx/34/*.bmp

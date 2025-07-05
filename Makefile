@@ -250,6 +250,7 @@ home := \
 	gfx/39/*.bmp
 
 40 := \
+	constants/* \
 	40.asm \
 	40/*
 

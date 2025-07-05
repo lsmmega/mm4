@@ -290,6 +290,7 @@ home := \
 	gfx/46/*.bmp
 
 47 := \
+	constants/* \
 	47.asm \
 	47/* \
 	gfx/47/*.bmp

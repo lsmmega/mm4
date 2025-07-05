@@ -260,6 +260,7 @@ home := \
 	41/*
 
 42 := \
+	constants/* \
 	42.asm \
 	42/* \
 	gfx/42/*.bmp

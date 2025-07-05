@@ -238,6 +238,7 @@ home := \
 	gfx/37/*.bmp
 
 38 := \
+	constants/* \
 	38.asm \
 	38/* \
 	gfx/38/*.bmp

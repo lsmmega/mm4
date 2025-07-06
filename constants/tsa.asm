@@ -12,7 +12,7 @@
 	glide_left
 	slippery
 	special
-	usused_0d
-	usused_0e
-	usused_0f
+	unused_0d
+	unused_0e
+	unused_0f
 .ENDENUM

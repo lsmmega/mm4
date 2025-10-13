@@ -1,4 +1,4 @@
-;caslte stage clear flags.
+;castle stage clear flags.
 	cossack_1_clear = 1 << 0
 	cossack_2_clear = 1 << 1
 	cossack_3_clear = 1 << 2

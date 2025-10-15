@@ -1,4 +1,8 @@
+audio_obj := \
+	audio.o
+
 rom_obj := \
+	_audio.o \
 	header.o \
 	home.o \
 	0.o \
@@ -30,9 +34,6 @@ rom_obj := \
 	26.o \
 	27.o \
 	28.o \
-	29.o \
-	30.o \
-	31.o \
 	32.o \
 	33.o \
 	34.o \
@@ -64,8 +65,17 @@ rom_obj := \
 	60.o \
 	61.o
 
-cfg := \
+audio_cfg := \
+	audio.cfg
+
+mm4_cfg := \
 	mm4.cfg
+
+audio := \
+	audio.asm \
+	constants/* \
+	macros/* \
+	audio/*
 
 header := \
 	constants/* \
@@ -190,18 +200,6 @@ home := \
 28 := \
 	28.asm \
 	gfx/28/*.bmp
-
-29 := \
-	29.asm \
-	29/*
-
-30 := \
-	30.asm \
-	30/*
-
-31 := \
-	31.asm \
-	31/*
 
 32 := \
 	constants/* \
@@ -469,13 +467,23 @@ gfx50 := \
 gfx51 := \
 	gfx/51/51.bmp gfx/51/51.chr
 
-.PHONY: all mm4 clean
+.PHONY: all audio mm4 clean
 
-all: mm4
+all: audio mm4
+audio: audio.bin
 mm4: mm4.nes
 
-%.nes: $(rom_obj) $(cfg)
-	ld65 -C $(cfg) $(rom_obj) -o $@ -m $*.map
+audio.bin: $(audio_obj) $(audio_cfg)
+	ld65 -C $(audio_cfg) $(audio_obj) -o $@
+
+%.nes: $(rom_obj) $(mm4_cfg)
+	ld65 -C $(mm4_cfg) $(rom_obj) -o $@ -m $*.map
+
+audio.o: $(audio)
+	ca65 audio.asm
+
+_audio.o: $(audio)
+	ca65 _audio.asm
 
 header.o: $(header)
 	ca65 header.asm
@@ -592,15 +600,6 @@ home.o: $(home)
 	bmp2nes $(gfx28)
 	ca65 28.asm
 
-29.o: $(29)
-	ca65 29.asm
-
-30.o: $(30)
-	ca65 30.asm
-
-31.o: $(31)
-	ca65 31.asm
-
 32.o: $(32)
 	ca65 32.asm
 
@@ -708,7 +707,8 @@ home.o: $(home)
 	ca65 61.asm
 
 clean:
-	$(RM) $(rom_obj) \
+	$(RM) $(audio_obj) $(rom_obj) \
 	gfx/*/*.chr \
 	*.nes \
 	*.map
+	find "audio.bin" -delete

@@ -1,4 +1,4 @@
-;castle stage clear flags.
+;castle stage clear flags
 	cossack_1_clear = 1 << 0
 	cossack_2_clear = 1 << 1
 	cossack_3_clear = 1 << 2
@@ -8,7 +8,7 @@
 	wily_3_clear    = 1 << 6
 	wily_4_clear    = 1 << 7
 
-;rematch flags.
+;rematch flags
 	rematch_brightman_done  = 1 << 0
 	rematch_toadman_done    = 1 << 1
 	rematch_drillman_done   = 1 << 2
@@ -18,7 +18,7 @@
 	rematch_diveman_done    = 1 << 6
 	rematch_skullman_done   = 1 << 7
 
-;regular stage clear flags.
+;regular stage clear flags
 	stage_brightman_clear  = 1 << 0
 	stage_toadman_clear    = 1 << 1
 	stage_drillman_clear   = 1 << 2

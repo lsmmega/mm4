@@ -75,7 +75,8 @@ audio := \
 	audio.asm \
 	constants/* \
 	macros/* \
-	audio/*
+	audio/* \
+	audio/music/*
 
 header := \
 	header.asm \
@@ -470,10 +471,10 @@ gfx51 := \
 .PHONY: all audio mm4 clean
 
 all: audio mm4
-audio: audio.bin
+audio: _audio.bin
 mm4: mm4.nes
 
-audio.bin: $(audio_obj) $(audio_cfg)
+_audio.bin: $(audio_obj) $(audio_cfg)
 	ld65 -C $(audio_cfg) $(audio_obj) -o $@
 
 %.nes: $(rom_obj) $(mm4_cfg)
@@ -711,4 +712,4 @@ clean:
 	gfx/*/*.chr \
 	*.nes \
 	*.map
-	find "audio.bin" -delete
+	find "_audio.bin" -delete

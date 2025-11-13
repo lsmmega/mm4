@@ -9,4 +9,4 @@
 
 # ld65 extras
 *.map
-_audio.bin
+audio.bin

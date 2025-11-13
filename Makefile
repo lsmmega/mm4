@@ -471,10 +471,10 @@ gfx51 := \
 .PHONY: all audio mm4 clean
 
 all: audio mm4
-audio: _audio.bin
+audio: audio.bin
 mm4: mm4.nes
 
-_audio.bin: $(audio_obj) $(audio_cfg)
+audio.bin: $(audio_obj) $(audio_cfg)
 	ld65 -C $(audio_cfg) $(audio_obj) -o $@
 
 %.nes: $(rom_obj) $(mm4_cfg)
@@ -712,4 +712,4 @@ clean:
 	gfx/*/*.chr \
 	*.nes \
 	*.map
-	find "_audio.bin" -delete
+	find "audio.bin" -delete

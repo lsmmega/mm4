@@ -29,75 +29,75 @@ music_brightman_pulse_1_loop_1:
 	note_ads $AA
 	instrument 2
 	duty_cycle 3
-	note B_3, 16
-	note B_3, 4
-	note Db4, 4
+	note B_3, 16 ;main channel_transpose is Db4
+	note B_3, 4 ;main channel_transpose is Db4
+	note Db4, 4 ;main channel_transpose is Eb4
 	rest 4
 	connect_note_set
-	note D_4, 16
+	note D_4, 16 ;main channel_transpose is E_4
 	connect_note_set
-	note D_4, 4
+	note D_4, 4 ;main channel_transpose is E_4
 	octave_jump
-	note E_4, 16
-	note Db4, 4
-	note B_3, 4
+	note E_4, 16 ;main channel_transpose is Gb4
+	note Db4, 4 ;main channel_transpose is Eb4
+	note B_3, 4 ;main channel_transpose is Db4
 	rest 4
 	dotted_note_set
-	note A_3, 8
-	note Db5, 4
-	note B_4, 4
+	note A_3, 8 ;main channel_transpose is B_3
+	note Db5, 4 ;main channel_transpose is Eb5
+	note B_4, 4 ;main channel_transpose is Db5
 	rest 4
-	note A_4, 16
+	note A_4, 16 ;main channel_transpose is B_4
 	dotted_note_set
 	rest 8
 	octave_jump
-	note G_3, 4
-	note A_3, 4
+	note G_3, 4 ;main channel_transpose is A_3
+	note A_3, 4 ;main channel_transpose is B_3
 	rest 4
 	connect_note_set
-	note B_3, 16
+	note B_3, 16 ;main channel_transpose is Db4
 	connect_note_set
-	note B_3, 4
+	note B_3, 4 ;main channel_transpose is Db4
 	break_1 no_channel_flags_set, music_brightman_pulse_1_break_1
-	note A_3, 4
-	note B_3, 4
+	note A_3, 4 ;main channel_transpose is B_3
+	note B_3, 4 ;main channel_transpose is Db4
 	rest 4
-	note Db4, 16
-	note A_3, 4
-	note B_3, 4
+	note Db4, 16 ;main channel_transpose is Eb4
+	note A_3, 4 ;main channel_transpose is B_3
+	note B_3, 4 ;main channel_transpose is Db4
 	rest 4
-	note D_4, 4
+	note D_4, 4 ;main channel_transpose is E_4
 	rest 4
-	note Db4, 4
+	note Db4, 4 ;main channel_transpose is Eb4
 	rest 4
-	note A_3, 4
-	note B_3, 4
+	note A_3, 4 ;main channel_transpose is B_3
+	note B_3, 4 ;main channel_transpose is Db4
 	rest 4
 	octave_jump
-	note B_4, 4
+	note B_4, 4 ;main channel_transpose is Db5
 	rest 4
-	note B_4, 8
-	note A_4, 4
-	note Db5, 4
+	note B_4, 8 ;main channel_transpose is Db5
+	note A_4, 4 ;main channel_transpose is B_4
+	note Db5, 4 ;main channel_transpose is Eb5
 	rest 4
 	loop_1 1, music_brightman_pulse_1_loop_1
 
 music_brightman_pulse_1_break_1:
 	current_octave_jump .SET 0
-	note D_4, 4
-	note Db4, 4
+	note D_4, 4 ;main channel_transpose is E_4
+	note Db4, 4 ;main channel_transpose is Eb4
 	rest 4
 	octave_jump
-	note E_4, 16
-	note F_4, 4
-	note Gb4, 4
+	note E_4, 16 ;main channel_transpose is Gb4
+	note F_4, 4 ;main channel_transpose is G_4
+	note Gb4, 4 ;main channel_transpose is Ab4
 	rest 4
-	note Gb4, 4
+	note Gb4, 4 ;main channel_transpose is Ab4
 	rest 8
-	note A_4, 4
+	note A_4, 4 ;main channel_transpose is B_4
 	rest 4
-	note Bb4, 4
-	note B_4, 16
+	note Bb4, 4 ;main channel_transpose is C_5
+	note B_4, 16 ;main channel_transpose is Db5
 	rest 16
 	channel_transpose 0
 	note_ads $00
@@ -209,48 +209,48 @@ music_brightman_pulse_2_loop_1:
 	note_ads $FF
 	duty_cycle 2
 	instrument 2
-	note D_3, 64
+	note D_3, 64 ;main channel_transpose is E_3
 	dotted_note_set
-	note Db3, 16
+	note Db3, 16 ;main channel_transpose is Eb3
 	duty_cycle 1
 	octave_jump
-	note E_4, 4
-	note D_4, 4
+	note E_4, 4 ;main channel_transpose is Gb4
+	note D_4, 4 ;main channel_transpose is E_4
 	rest 4
-	note Db4, 16
+	note Db4, 16 ;main channel_transpose is Eb4
 	dotted_note_set
 	rest 8
 	duty_cycle 2
-	note B_2, 32
-	note Db3, 32
+	note B_2, 32 ;main channel_transpose is Db3
+	note Db3, 32 ;main channel_transpose is Eb3
 	break_1 channel_octave_jump_set, music_brightman_pulse_2_break_1
-	note D_3, 8
+	note D_3, 8 ;main channel_transpose is E_3
 	rest 16
-	note D_3, 8
+	note D_3, 8 ;main channel_transpose is E_3
 	rest 4
 	duty_cycle 1
-	note D_4, 4
+	note D_4, 4 ;main channel_transpose is E_4
 	rest 4
-	note D_4, 8
-	note Db4, 4
-	note E_4, 4
+	note D_4, 8 ;main channel_transpose is E_4
+	note Db4, 4 ;main channel_transpose is Eb4
+	note E_4, 4 ;main channel_transpose is Gb4
 	rest 4
 	loop_1 1, music_brightman_pulse_2_loop_1
 
 music_brightman_pulse_2_break_1:
 	current_octave_jump .SET 1
 	duty_cycle 1
-	note D_3, 4
-	note D_3, 4
+	note D_3, 4 ;main channel_transpose is E_3
+	note D_3, 4 ;main channel_transpose is E_3
 	dotted_note_set
 	rest 8
-	note Eb3, 4
+	note Eb3, 4 ;main channel_transpose is F_3
 	rest 4
-	note Eb3, 4
+	note Eb3, 4 ;main channel_transpose is F_3
 	rest 16
 	rest 4
 	dotted_note_set
-	note Eb3, 8
+	note Eb3, 8 ;main channel_transpose is F_3
 	channel_transpose 0
 	instrument 5
 	duty_cycle 2
@@ -401,77 +401,77 @@ music_brightman_triangle_main:
 music_brightman_triangle_loop_1:
 	channel_flags no_channel_flags_set
 	note_ads $DC
-	note B_3, 4
+	note B_3, 4 ;main channel_transpose is Db4
 	rest 4
-	note B_3, 4
+	note B_3, 4 ;main channel_transpose is Db4
 	rest 4
-	note Gb4, 8
-	note B_3, 4
-	note B_3, 4
+	note Gb4, 8 ;main channel_transpose is Ab4
+	note B_3, 4 ;main channel_transpose is Db4
+	note B_3, 4 ;main channel_transpose is Db4
 	rest 4
-	note B_3, 4
+	note B_3, 4 ;main channel_transpose is Db4
 	rest 4
-	note B_3, 4
-	note Gb4, 8
-	note B_3, 8
-	note A_3, 4
+	note B_3, 4 ;main channel_transpose is Db4
+	note Gb4, 8 ;main channel_transpose is Ab4
+	note B_3, 8 ;main channel_transpose is Db4
+	note A_3, 4 ;main channel_transpose is B_3
 	rest 4
-	note A_3, 4
+	note A_3, 4 ;main channel_transpose is B_3
 	rest 4
-	note E_4, 8
-	note A_3, 4
-	note A_3, 4
+	note E_4, 8 ;main channel_transpose is Gb4
+	note A_3, 4 ;main channel_transpose is B_3
+	note A_3, 4 ;main channel_transpose is B_3
 	rest 4
-	note A_3, 4
+	note A_3, 4 ;main channel_transpose is B_3
 	rest 4
-	note A_3, 4
-	note E_4, 8
-	note A_3, 8
-	note G_3, 4
+	note A_3, 4 ;main channel_transpose is B_3
+	note E_4, 8 ;main channel_transpose is Gb4
+	note A_3, 8 ;main channel_transpose is B_3
+	note G_3, 4 ;main channel_transpose is A_3
 	rest 4
-	note G_3, 4
+	note G_3, 4 ;main channel_transpose is A_3
 	rest 4
-	note D_4, 8
-	note G_3, 4
-	note G_3, 4
+	note D_4, 8 ;main channel_transpose is E_4
+	note G_3, 4 ;main channel_transpose is A_3
+	note G_3, 4 ;main channel_transpose is A_3
 	rest 4
-	note Ab3, 4
+	note Ab3, 4 ;main channel_transpose is Bb3
 	rest 4
-	note A_3, 4
-	note E_4, 8
-	note Db4, 8
+	note A_3, 4 ;main channel_transpose is B_3
+	note E_4, 8 ;main channel_transpose is Gb4
+	note Db4, 8 ;main channel_transpose is Eb4
 	break_1 no_channel_flags_set, music_brightman_triangle_break_1
-	note D_4, 4
+	note D_4, 4 ;main channel_transpose is E_4
 	rest 4
-	note Gb4, 4
+	note Gb4, 4 ;main channel_transpose is Ab4
 	rest 4
-	note E_4, 8
-	note Db4, 4
-	note D_4, 4
+	note E_4, 8 ;main channel_transpose is Gb4
+	note Db4, 4 ;main channel_transpose is Eb4
+	note D_4, 4 ;main channel_transpose is E_4
 	rest 4
-	note B_3, 4
+	note B_3, 4 ;main channel_transpose is Db4
 	rest 4
-	note B_3, 4
+	note B_3, 4 ;main channel_transpose is Db4
 	rest 4
-	note B_3, 4
-	note B_3, 4
-	note A_3, 4
+	note B_3, 4 ;main channel_transpose is Db4
+	note B_3, 4 ;main channel_transpose is Db4
+	note A_3, 4 ;main channel_transpose is B_3
 	loop_1 1, music_brightman_triangle_loop_1
 
 music_brightman_triangle_break_1:
 	current_octave_jump .SET 0
-	note B_3, 4
+	note B_3, 4 ;main channel_transpose is Db4
 	rest 4
-	note D_4, 4
+	note D_4, 4 ;main channel_transpose is E_4
 	rest 8
-	note Db4, 4
+	note Db4, 4 ;main channel_transpose is Eb4
 	rest 4
-	note Db4, 4
-	note Eb4, 16
+	note Db4, 4 ;main channel_transpose is Eb4
+	note Eb4, 16 ;main channel_transpose is F_4
 	instrument 4
-	note Db5, 8
+	note Db5, 8 ;main channel_transpose is Eb5
 	rest 4
-	note F_4, 4
+	note F_4, 4 ;main channel_transpose is G_4
 
 music_brightman_triangle_loop_2:
 	channel_flags no_channel_flags_set

@@ -5,4 +5,5 @@
 .INCBIN  "audio/pointers.bin"
 .INCBIN  "audio/instruments.bin"
 .INCLUDE "audio/music/brightman.asm"
+.INCLUDE "audio/music/toadman.asm"
 .INCBIN  "audio/_audio.bin"

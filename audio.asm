@@ -10,4 +10,5 @@
 .INCLUDE "audio/music/drillman.asm"
 .INCLUDE "audio/music/pharaohman.asm"
 .INCLUDE "audio/music/diveman.asm"
+.INCLUDE "audio/music/skullman.asm"
 .INCBIN  "audio/_audio.bin"

@@ -15,4 +15,5 @@
 .INCLUDE "audio/music/cossack1_2.asm"
 .INCLUDE "audio/music/wily1_2.asm"
 .INCLUDE "audio/music/opening1.asm"
+.INCLUDE "audio/music/ending.asm"
 .INCBIN  "audio/_audio.bin"

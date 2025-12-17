@@ -23,4 +23,5 @@
 .INCLUDE "audio/music/stage_select.asm"
 .INCLUDE "audio/music/boss_fighting.asm"
 .INCLUDE "audio/music/title.asm"
+.INCLUDE "audio/music/staff_roll.asm"
 .INCBIN  "audio/_audio.bin"

@@ -24,4 +24,5 @@
 .INCLUDE "audio/music/boss_fighting.asm"
 .INCLUDE "audio/music/title.asm"
 .INCLUDE "audio/music/staff_roll.asm"
+.INCLUDE "audio/music/get_weapon.asm"
 .INCBIN  "audio/_audio.bin"

@@ -17,4 +17,5 @@
 .INCLUDE "audio/music/opening1.asm"
 .INCLUDE "audio/music/ending.asm"
 .INCLUDE "audio/music/boss_defeated.asm"
+.INCLUDE "audio/music/password.asm"
 .INCBIN  "audio/_audio.bin"

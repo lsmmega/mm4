@@ -25,4 +25,5 @@
 .INCLUDE "audio/music/title.asm"
 .INCLUDE "audio/music/staff_roll.asm"
 .INCLUDE "audio/music/get_weapon.asm"
+.INCLUDE "audio/music/cossack3_4.asm"
 .INCBIN  "audio/_audio.bin"

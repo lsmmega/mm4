@@ -3,38 +3,17 @@ audio_obj := \
 
 rom_obj := \
 	_audio.o \
+	gfx.o \
 	header.o \
 	home.o \
 	stages.o \
-	0.o \
-	1.o \
-	2.o \
-	3.o \
-	4.o \
-	5.o \
-	6.o \
-	7.o \
-	8.o \
-	9.o \
 	10.o \
 	11.o \
 	12.o \
 	13.o \
 	14.o \
 	15.o \
-	16.o \
-	17.o \
-	18.o \
-	19.o \
-	20.o \
-	21.o \
-	22.o \
-	23.o \
-	24.o \
-	25.o \
-	26.o \
 	27.o \
-	28.o \
 	48.o \
 	49.o \
 	50.o \
@@ -62,6 +41,31 @@ audio := \
 	macros/* \
 	audio/* \
 	audio/music/*
+
+gfx := \
+	gfx.asm \
+	gfx/0/*.bmp \
+	gfx/1/*.bmp \
+	gfx/2/*.bmp \
+	gfx/3/*.bmp \
+	gfx/4/*.bmp \
+	gfx/5/*.bmp \
+	gfx/6/*.bmp \
+	gfx/7/*.bmp \
+	gfx/8/*.bmp \
+	gfx/9/*.bmp \
+	gfx/16/*.bmp \
+	gfx/17/*.bmp \
+	gfx/18/*.bmp \
+	gfx/19/*.bmp \
+	gfx/20/*.bmp \
+	gfx/21/*.bmp \
+	gfx/22/*.bmp \
+	gfx/23/*.bmp \
+	gfx/24/*.bmp \
+	gfx/25/*.bmp \
+	gfx/26/*.bmp \
+	gfx/28/*.bmp
 
 header := \
 	header.asm \
@@ -103,46 +107,6 @@ stages := \
 	stages/wily4/* \
 	gfx/47/*.bmp
 
-0 := \
-	0.asm \
-	gfx/0/*.bmp
-
-1 := \
-	1.asm \
-	gfx/1/*.bmp
-
-2 := \
-	2.asm \
-	gfx/2/*.bmp
-
-3 := \
-	3.asm \
-	gfx/3/*.bmp
-
-4:= \
-	4.asm \
-	gfx/4/*.bmp
-
-5 := \
-	5.asm \
-	gfx/5/*.bmp
-
-6 := \
-	6.asm \
-	gfx/6/*.bmp
-
-7 := \
-	7.asm \
-	gfx/7/*.bmp
-
-8 := \
-	8.asm \
-	gfx/8/*.bmp
-
-9 := \
-	9.asm \
-	gfx/9/*.bmp
-
 10 := \
 	10.asm \
 	10/*
@@ -167,57 +131,9 @@ stages := \
 	15.asm \
 	15/*
 
-16 := \
-	16.asm \
-	gfx/16/*.bmp
-
-17 := \
-	17.asm \
-	gfx/17/*.bmp
-
-18 := \
-	18.asm \
-	gfx/18/*.bmp
-
-19 := \
-	19.asm \
-	gfx/19/*.bmp
-
-20:= \
-	20.asm \
-	gfx/20/*.bmp
-
-21 := \
-	21.asm \
-	gfx/21/*.bmp
-
-22 := \
-	22.asm \
-	gfx/22/*.bmp
-
-23 := \
-	23.asm \
-	gfx/23/*.bmp
-
-24 := \
-	24.asm \
-	gfx/24/*.bmp
-
-25 := \
-	25.asm \
-	gfx/25/*.bmp
-
-26 := \
-	26.asm \
-	gfx/26/*.bmp
-
 27 := \
 	27.asm \
 	27/*
-
-28 := \
-	28.asm \
-	gfx/28/*.bmp
 
 48 := \
 	48.asm \
@@ -279,6 +195,30 @@ stages := \
 	61.asm \
 	61/*
 
+_gfx := \
+	gfx/0/0.bmp gfx/0/0.chr \
+	gfx/1/1.bmp gfx/1/1.chr \
+	gfx/2/2.bmp gfx/2/2.chr \
+	gfx/3/3.bmp gfx/3/3.chr \
+	gfx/4/4.bmp gfx/4/4.chr \
+	gfx/5/5.bmp gfx/5/5.chr \
+	gfx/6/6.bmp gfx/6/6.chr \
+	gfx/7/7.bmp gfx/7/7.chr \
+	gfx/8/8.bmp gfx/8/8.chr \
+	gfx/9/9.bmp gfx/9/9.chr \
+	gfx/16/16.bmp gfx/16/16.chr \
+	gfx/17/17.bmp gfx/17/17.chr \
+	gfx/18/18.bmp gfx/18/18.chr \
+	gfx/19/19.bmp gfx/19/19.chr \
+	gfx/20/20.bmp gfx/20/20.chr \
+	gfx/21/21.bmp gfx/21/21.chr \
+	gfx/22/22.bmp gfx/22/22.chr \
+	gfx/23/23.bmp gfx/23/23.chr \
+	gfx/24/24.bmp gfx/24/24.chr \
+	gfx/25/25.bmp gfx/25/25.chr \
+	gfx/26/26.bmp gfx/26/26.chr \
+	gfx/28/28.bmp gfx/28/28.chr
+
 gfx_stages := \
 	gfx/34/34.bmp gfx/34/34.chr \
 	gfx/35/35.bmp gfx/35/35.chr \
@@ -292,72 +232,6 @@ gfx_stages := \
 	gfx/45/45.bmp gfx/45/45.chr \
 	gfx/46/46.bmp gfx/46/46.chr \
 	gfx/47/47.bmp gfx/47/47.chr
-
-gfx0 := \
-	gfx/0/0.bmp gfx/0/0.chr
-
-gfx1 := \
-	gfx/1/1.bmp gfx/1/1.chr
-
-gfx2 := \
-	gfx/2/2.bmp gfx/2/2.chr
-
-gfx3 := \
-	gfx/3/3.bmp gfx/3/3.chr
-
-gfx4 := \
-	gfx/4/4.bmp gfx/4/4.chr
-
-gfx5 := \
-	gfx/5/5.bmp gfx/5/5.chr
-
-gfx6 := \
-	gfx/6/6.bmp gfx/6/6.chr
-
-gfx7 := \
-	gfx/7/7.bmp gfx/7/7.chr
-
-gfx8 := \
-	gfx/8/8.bmp gfx/8/8.chr
-
-gfx9 := \
-	gfx/9/9.bmp gfx/9/9.chr
-
-gfx16 := \
-	gfx/16/16.bmp gfx/16/16.chr
-
-gfx17 := \
-	gfx/17/17.bmp gfx/17/17.chr
-
-gfx18 := \
-	gfx/18/18.bmp gfx/18/18.chr
-
-gfx19 := \
-	gfx/19/19.bmp gfx/19/19.chr
-
-gfx20 := \
-	gfx/20/20.bmp gfx/20/20.chr
-
-gfx21 := \
-	gfx/21/21.bmp gfx/21/21.chr
-
-gfx22 := \
-	gfx/22/22.bmp gfx/22/22.chr
-
-gfx23 := \
-	gfx/23/23.bmp gfx/23/23.chr
-
-gfx24 := \
-	gfx/24/24.bmp gfx/24/24.chr
-
-gfx25 := \
-	gfx/25/25.bmp gfx/25/25.chr
-
-gfx26 := \
-	gfx/26/26.bmp gfx/26/26.chr
-
-gfx28 := \
-	gfx/28/28.bmp gfx/28/28.chr
 
 gfx48 := \
 	gfx/48/48.bmp gfx/48/48.chr
@@ -389,6 +263,10 @@ audio.o: $(audio)
 _audio.o: $(audio)
 	ca65 _audio.asm
 
+gfx.o: $(gfx)
+	bmp2nes $(_gfx)
+	ca65 gfx.asm
+
 header.o: $(header)
 	ca65 header.asm
 
@@ -398,46 +276,6 @@ home.o: $(home)
 stages.o: $(stages)
 	bmp2nes $(gfx_stages)
 	ca65 stages.asm
-
-0.o: $(0)
-	bmp2nes $(gfx0)
-	ca65 0.asm
-
-1.o: $(1)
-	bmp2nes $(gfx1)
-	ca65 1.asm
-
-2.o: $(2)
-	bmp2nes $(gfx2)
-	ca65 2.asm
-
-3.o: $(3)
-	bmp2nes $(gfx3)
-	ca65 3.asm
-
-4.o: $(4)
-	bmp2nes $(gfx4)
-	ca65 4.asm
-
-5.o: $(5)
-	bmp2nes $(gfx5)
-	ca65 5.asm
-
-6.o: $(6)
-	bmp2nes $(gfx6)
-	ca65 6.asm
-
-7.o: $(7)
-	bmp2nes $(gfx7)
-	ca65 7.asm
-
-8.o: $(8)
-	bmp2nes $(gfx8)
-	ca65 8.asm
-
-9.o: $(9)
-	bmp2nes $(gfx9)
-	ca65 9.asm
 
 10.o: $(10)
 	ca65 10.asm
@@ -457,56 +295,8 @@ stages.o: $(stages)
 15.o: $(15)
 	ca65 15.asm
 
-16.o: $(16)
-	bmp2nes $(gfx16)
-	ca65 16.asm
-
-17.o: $(17)
-	bmp2nes $(gfx17)
-	ca65 17.asm
-
-18.o: $(18)
-	bmp2nes $(gfx18)
-	ca65 18.asm
-
-19.o: $(19)
-	bmp2nes $(gfx19)
-	ca65 19.asm
-
-20.o: $(20)
-	bmp2nes $(gfx20)
-	ca65 20.asm
-
-21.o: $(21)
-	bmp2nes $(gfx21)
-	ca65 21.asm
-
-22.o: $(22)
-	bmp2nes $(gfx22)
-	ca65 22.asm
-
-23.o: $(23)
-	bmp2nes $(gfx23)
-	ca65 23.asm
-
-24.o: $(24)
-	bmp2nes $(gfx24)
-	ca65 24.asm
-
-25.o: $(25)
-	bmp2nes $(gfx25)
-	ca65 25.asm
-
-26.o: $(26)
-	bmp2nes $(gfx26)
-	ca65 26.asm
-
 27.o: $(27)
 	ca65 27.asm
-
-28.o: $(28)
-	bmp2nes $(gfx28)
-	ca65 28.asm
 
 48.o: $(48)
 	bmp2nes $(gfx48)

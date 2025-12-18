@@ -5,6 +5,7 @@ rom_obj := \
 	_audio.o \
 	header.o \
 	home.o \
+	stages.o \
 	0.o \
 	1.o \
 	2.o \
@@ -34,22 +35,6 @@ rom_obj := \
 	26.o \
 	27.o \
 	28.o \
-	32.o \
-	33.o \
-	34.o \
-	35.o \
-	36.o \
-	37.o \
-	38.o \
-	39.o \
-	40.o \
-	41.o \
-	42.o \
-	43.o \
-	44.o \
-	45.o \
-	46.o \
-	47.o \
 	48.o \
 	49.o \
 	50.o \
@@ -85,6 +70,38 @@ header := \
 home := \
 	home.asm \
 	home/*
+
+stages := \
+	stages.asm \
+	constants/* \
+	stages/brightman/* \
+	stages/toadman/* \
+	stages/drillman/* \
+	gfx/34/*.bmp \
+	stages/pharaohman/* \
+	gfx/35/*.bmp \
+	stages/ringman/* \
+	gfx/36/*.bmp \
+	stages/dustman/* \
+	gfx/37/*.bmp \
+	stages/diveman/* \
+	gfx/38/*.bmp \
+	stages/skullman/* \
+	gfx/39/*.bmp \
+	stages/cossack1/* \
+	stages/cossack2/* \
+	stages/cossack3/* \
+	gfx/42/*.bmp \
+	stages/cossack4/* \
+	gfx/43/*.bmp \
+	stages/wily1/* \
+	gfx/44/*.bmp \
+	stages/wily2/* \
+	gfx/45/*.bmp \
+	stages/wily3/* \
+	gfx/46/*.bmp \
+	stages/wily4/* \
+	gfx/47/*.bmp
 
 0 := \
 	0.asm \
@@ -202,98 +219,6 @@ home := \
 	28.asm \
 	gfx/28/*.bmp
 
-32 := \
-	constants/* \
-	32.asm \
-	32/*
-
-33 := \
-	constants/* \
-	33.asm \
-	33/*
-
-34 := \
-	constants/* \
-	34.asm \
-	34/* \
-	gfx/34/*.bmp
-
-35 := \
-	constants/* \
-	35.asm \
-	35/* \
-	gfx/35/*.bmp
-
-36 := \
-	constants/* \
-	36.asm \
-	36/* \
-	gfx/36/*.bmp
-
-37 := \
-	constants/* \
-	37.asm \
-	37/* \
-	gfx/37/*.bmp
-
-38 := \
-	constants/* \
-	38.asm \
-	38/* \
-	gfx/38/*.bmp
-
-39 := \
-	constants/* \
-	39.asm \
-	39/* \
-	gfx/39/*.bmp
-
-40 := \
-	constants/* \
-	40.asm \
-	40/*
-
-41 := \
-	constants/* \
-	41.asm \
-	41/*
-
-42 := \
-	constants/* \
-	42.asm \
-	42/* \
-	gfx/42/*.bmp
-
-43 := \
-	constants/* \
-	43.asm \
-	43/* \
-	gfx/43/*.bmp
-
-44 := \
-	constants/* \
-	44.asm \
-	44/* \
-	gfx/44/*.bmp
-
-45 := \
-	constants/* \
-	45.asm \
-	45/* \
-	gfx/45/*.bmp
-
-46 := \
-	constants/* \
-	46.asm \
-	46/* \
-	gfx/46/*.bmp
-
-47 := \
-	constants/* \
-	47.asm \
-	47/* \
-	gfx/47/*.bmp
-
 48 := \
 	48.asm \
 	48/* \
@@ -353,6 +278,20 @@ home := \
 61 := \
 	61.asm \
 	61/*
+
+gfx_stages := \
+	gfx/34/34.bmp gfx/34/34.chr \
+	gfx/35/35.bmp gfx/35/35.chr \
+	gfx/36/36.bmp gfx/36/36.chr \
+	gfx/37/37.bmp gfx/37/37.chr \
+	gfx/38/38.bmp gfx/38/38.chr \
+	gfx/39/39.bmp gfx/39/39.chr \
+	gfx/42/42.bmp gfx/42/42.chr \
+	gfx/43/43.bmp gfx/43/43.chr \
+	gfx/44/44.bmp gfx/44/44.chr \
+	gfx/45/45.bmp gfx/45/45.chr \
+	gfx/46/46.bmp gfx/46/46.chr \
+	gfx/47/47.bmp gfx/47/47.chr
 
 gfx0 := \
 	gfx/0/0.bmp gfx/0/0.chr
@@ -420,42 +359,6 @@ gfx26 := \
 gfx28 := \
 	gfx/28/28.bmp gfx/28/28.chr
 
-gfx34 := \
-	gfx/34/34.bmp gfx/34/34.chr
-
-gfx35 := \
-	gfx/35/35.bmp gfx/35/35.chr
-
-gfx36 := \
-	gfx/36/36.bmp gfx/36/36.chr
-
-gfx37 := \
-	gfx/37/37.bmp gfx/37/37.chr
-
-gfx38 := \
-	gfx/38/38.bmp gfx/38/38.chr
-
-gfx39 := \
-	gfx/39/39.bmp gfx/39/39.chr
-
-gfx42 := \
-	gfx/42/42.bmp gfx/42/42.chr
-
-gfx43 := \
-	gfx/43/43.bmp gfx/43/43.chr
-
-gfx44 := \
-	gfx/44/44.bmp gfx/44/44.chr
-
-gfx45 := \
-	gfx/45/45.bmp gfx/45/45.chr
-
-gfx46 := \
-	gfx/46/46.bmp gfx/46/46.chr
-
-gfx47 := \
-	gfx/47/47.bmp gfx/47/47.chr
-
 gfx48 := \
 	gfx/48/48.bmp gfx/48/48.chr
 
@@ -491,6 +394,10 @@ header.o: $(header)
 
 home.o: $(home)
 	ca65 home.asm
+
+stages.o: $(stages)
+	bmp2nes $(gfx_stages)
+	ca65 stages.asm
 
 0.o: $(0)
 	bmp2nes $(gfx0)
@@ -600,66 +507,6 @@ home.o: $(home)
 28.o: $(28)
 	bmp2nes $(gfx28)
 	ca65 28.asm
-
-32.o: $(32)
-	ca65 32.asm
-
-33.o: $(33)
-	ca65 33.asm
-
-34.o: $(34)
-	bmp2nes $(gfx34)
-	ca65 34.asm
-
-35.o: $(35)
-	bmp2nes $(gfx35)
-	ca65 35.asm
-
-36.o: $(36)
-	bmp2nes $(gfx36)
-	ca65 36.asm
-
-37.o: $(37)
-	bmp2nes $(gfx37)
-	ca65 37.asm
-
-38.o: $(38)
-	bmp2nes $(gfx38)
-	ca65 38.asm
-
-39.o: $(39)
-	bmp2nes $(gfx39)
-	ca65 39.asm
-
-40.o: $(40)
-	ca65 40.asm
-
-41.o: $(41)
-	ca65 41.asm
-
-42.o: $(42)
-	bmp2nes $(gfx42)
-	ca65 42.asm
-
-43.o: $(43)
-	bmp2nes $(gfx43)
-	ca65 43.asm
-
-44.o: $(44)
-	bmp2nes $(gfx44)
-	ca65 44.asm
-
-45.o: $(45)
-	bmp2nes $(gfx45)
-	ca65 45.asm
-
-46.o: $(46)
-	bmp2nes $(gfx46)
-	ca65 46.asm
-
-47.o: $(47)
-	bmp2nes $(gfx47)
-	ca65 47.asm
 
 48.o: $(48)
 	bmp2nes $(gfx48)

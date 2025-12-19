@@ -6,13 +6,8 @@ rom_obj := \
 	gfx.o \
 	header.o \
 	home.o \
+	sprites.o \
 	stages.o \
-	10.o \
-	11.o \
-	12.o \
-	13.o \
-	14.o \
-	15.o \
 	27.o \
 	48.o \
 	49.o \
@@ -75,6 +70,10 @@ home := \
 	home.asm \
 	home/*
 
+sprites := \
+	sprites.asm \
+	sprites/*
+
 stages := \
 	stages.asm \
 	constants/* \
@@ -106,30 +105,6 @@ stages := \
 	gfx/46/*.bmp \
 	stages/wily4/* \
 	gfx/47/*.bmp
-
-10 := \
-	10.asm \
-	10/*
-
-11 := \
-	11.asm \
-	11/*
-
-12 := \
-	12.asm \
-	12/*
-
-13 := \
-	13.asm \
-	13/*
-
-14 := \
-	14.asm \
-	14/*
-
-15 := \
-	15.asm \
-	15/*
 
 27 := \
 	27.asm \
@@ -273,27 +248,12 @@ header.o: $(header)
 home.o: $(home)
 	ca65 home.asm
 
+sprites.o: $(sprites)
+	ca65 sprites.asm
+
 stages.o: $(stages)
 	bmp2nes $(gfx_stages)
 	ca65 stages.asm
-
-10.o: $(10)
-	ca65 10.asm
-
-11.o: $(11)
-	ca65 11.asm
-
-12.o: $(12)
-	ca65 12.asm
-
-13.o: $(13)
-	ca65 13.asm
-
-14.o: $(14)
-	ca65 14.asm
-
-15.o: $(15)
-	ca65 15.asm
 
 27.o: $(27)
 	ca65 27.asm

@@ -18,8 +18,7 @@ rom_obj := \
 	56.o \
 	57.o \
 	58.o \
-	60.o \
-	61.o
+	60.o
 
 audio_cfg := \
 	audio.cfg
@@ -151,10 +150,6 @@ stages := \
 	60.asm \
 	60/*
 
-61 := \
-	61.asm \
-	61/*
-
 _gfx := \
 	gfx/0/0.bmp gfx/0/0.chr \
 	gfx/1/1.bmp gfx/1/1.chr \
@@ -276,9 +271,6 @@ stages.o: $(stages)
 
 60.o: $(60)
 	ca65 60.asm
-
-61.o: $(61)
-	ca65 61.asm
 
 clean:
 	$(RM) $(audio_obj) $(rom_obj) \

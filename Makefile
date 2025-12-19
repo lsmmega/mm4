@@ -6,14 +6,10 @@ rom_obj := \
 	gfx.o \
 	header.o \
 	home.o \
+	screen.o \
 	sprites.o \
 	stages.o \
 	27.o \
-	48.o \
-	49.o \
-	50.o \
-	51.o \
-	52.o \
 	53.o \
 	56.o \
 	57.o \
@@ -66,6 +62,14 @@ home := \
 	home.asm \
 	home/*
 
+screen := \
+	screen.asm \
+	screen/* \
+	gfx/48/*.bmp \
+	gfx/49/*.bmp \
+	gfx/50/*.bmp \
+	gfx/51/*.bmp
+
 sprites := \
 	sprites.asm \
 	sprites/*
@@ -105,30 +109,6 @@ stages := \
 27 := \
 	27.asm \
 	27/*
-
-48 := \
-	48.asm \
-	48/* \
-	gfx/48/*.bmp
-
-49 := \
-	49.asm \
-	49/* \
-	gfx/49/*.bmp
-
-50 := \
-	50.asm \
-	50/* \
-	gfx/50/*.bmp
-
-51 := \
-	51.asm \
-	51/* \
-	gfx/51/*.bmp
-
-52 := \
-	52.asm \
-	52/*
 
 53 := \
 	53.asm \
@@ -174,6 +154,12 @@ _gfx := \
 	gfx/26/26.bmp gfx/26/26.chr \
 	gfx/28/28.bmp gfx/28/28.chr
 
+gfx_screen := \
+	gfx/48/48.bmp gfx/48/48.chr \
+	gfx/49/49.bmp gfx/49/49.chr \
+	gfx/50/50.bmp gfx/50/50.chr \
+	gfx/51/51.bmp gfx/51/51.chr
+
 gfx_stages := \
 	gfx/34/34.bmp gfx/34/34.chr \
 	gfx/35/35.bmp gfx/35/35.chr \
@@ -187,18 +173,6 @@ gfx_stages := \
 	gfx/45/45.bmp gfx/45/45.chr \
 	gfx/46/46.bmp gfx/46/46.chr \
 	gfx/47/47.bmp gfx/47/47.chr
-
-gfx48 := \
-	gfx/48/48.bmp gfx/48/48.chr
-
-gfx49 := \
-	gfx/49/49.bmp gfx/49/49.chr
-
-gfx50 := \
-	gfx/50/50.bmp gfx/50/50.chr
-
-gfx51 := \
-	gfx/51/51.bmp gfx/51/51.chr
 
 .PHONY: all audio mm4 clean
 
@@ -228,6 +202,10 @@ header.o: $(header)
 home.o: $(home)
 	ca65 home.asm
 
+screen.o: $(screen)
+	bmp2nes $(gfx_screen)
+	ca65 screen.asm
+
 sprites.o: $(sprites)
 	ca65 sprites.asm
 
@@ -237,25 +215,6 @@ stages.o: $(stages)
 
 27.o: $(27)
 	ca65 27.asm
-
-48.o: $(48)
-	bmp2nes $(gfx48)
-	ca65 48.asm
-
-49.o: $(49)
-	bmp2nes $(gfx49)
-	ca65 49.asm
-
-50.o: $(50)
-	bmp2nes $(gfx50)
-	ca65 50.asm
-
-51.o: $(51)
-	bmp2nes $(gfx51)
-	ca65 51.asm
-
-52.o: $(52)
-	ca65 52.asm
 
 53.o: $(53)
 	ca65 53.asm

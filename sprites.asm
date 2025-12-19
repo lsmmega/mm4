@@ -6,3 +6,6 @@
 
 .SEGMENT "BANK0E"
 .INCBIN  "sprites/sprites_14.bin"
+
+.SEGMENT "BANK36"
+.INCBIN  "sprites/sprites_54.bin"

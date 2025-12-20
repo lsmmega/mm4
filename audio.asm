@@ -28,5 +28,6 @@
 .INCLUDE "audio/music/cossack3_4.asm"
 .INCLUDE "audio/music/wily3_4.asm"
 .INCBIN  "audio/_audio.bin"
+.INCLUDE "audio/music/wily_fighting.asm"
 .INCLUDE "audio/music/wily_defeated.asm"
 .INCLUDE "audio/unknown/unknown_3b9d1.asm"

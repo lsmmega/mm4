@@ -1,3 +1,4 @@
+;16x16
 ;topleft
 	.BYTE $00 ;00
 	.BYTE $C2 ;01
@@ -1288,7 +1289,7 @@
 	.BYTE wall << 4        | 0 ;FE
 	.BYTE doors << 4       | 0 ;FF
 
-	;     topleft, topright, bottomleft, bottomright
+;32x32, topleft, topright, bottomleft, bottomright
 	.BYTE $37, $37, $37, $37 ;00
 	.BYTE $37, $37, $37, $2C ;01
 	.BYTE $37, $37, $37, $29 ;02

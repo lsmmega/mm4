@@ -28,6 +28,7 @@ audio := \
 	macros/* \
 	audio/* \
 	audio/music/* \
+	audio/sfx/* \
 	audio/unused/*
 
 gfx := \

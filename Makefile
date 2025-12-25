@@ -28,7 +28,7 @@ audio := \
 	macros/* \
 	audio/* \
 	audio/music/* \
-	audio/unknown/*
+	audio/unused/*
 
 gfx := \
 	gfx.asm \
@@ -190,7 +190,7 @@ audio.bin: $(audio_obj) $(audio_cfg)
 audio.o: $(audio)
 	ca65 audio.asm
 
-_audio.o: $(audio)
+_audio.o: $(audio) $(audio_obj) $(audio_cfg)
 	ca65 _audio.asm
 
 gfx.o: $(gfx)

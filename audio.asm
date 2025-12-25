@@ -37,4 +37,4 @@
 .INCLUDE "audio/music/opening2.asm"
 .INCLUDE "audio/music/wily_fighting.asm"
 .INCLUDE "audio/music/wily_defeated.asm"
-.INCLUDE "audio/unknown/unknown_3b9d1.asm"
+.INCLUDE "audio/unused/unused.asm"

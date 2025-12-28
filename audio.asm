@@ -33,6 +33,7 @@
 .INCLUDE "audio/music/cossack_castle.asm"
 .INCBIN  "audio/_audio_1.bin"
 .INCLUDE "audio/music/music_3f.asm"
+.INCLUDE "audio/sfx/wily_ufo.asm"
 .INCBIN  "audio/_audio_2.bin"
 .INCLUDE "audio/music/opening2.asm"
 .INCLUDE "audio/music/wily_fighting.asm"

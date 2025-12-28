@@ -30,6 +30,7 @@
 .INCLUDE "audio/sfx/flash_stopper.asm"
 .INCLUDE "audio/sfx/rain_flush.asm"
 .INCLUDE "audio/sfx/ring_boomerang.asm"
+.INCLUDE "audio/sfx/drill_bomb.asm"
 .INCBIN  "audio/_audio_0.bin"
 .INCLUDE "audio/sfx/appearing_block.asm"
 .INCLUDE "audio/music/get_item.asm"

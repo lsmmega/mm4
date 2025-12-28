@@ -33,6 +33,7 @@
 .INCLUDE "audio/sfx/drill_bomb.asm"
 .INCLUDE "audio/sfx/pharaoh_shot.asm"
 .INCLUDE "audio/sfx/lighting.asm"
+.INCLUDE "audio/sfx/route.asm"
 .INCBIN  "audio/_audio_0.bin"
 .INCLUDE "audio/sfx/appearing_block.asm"
 .INCLUDE "audio/music/get_item.asm"

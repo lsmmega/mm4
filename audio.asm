@@ -35,6 +35,7 @@
 .INCLUDE "audio/sfx/lighting.asm"
 .INCLUDE "audio/sfx/route.asm"
 .INCLUDE "audio/sfx/jump_into_water.asm"
+.INCLUDE "audio/sfx/1up.asm"
 .INCBIN  "audio/_audio_0.bin"
 .INCLUDE "audio/sfx/appearing_block.asm"
 .INCLUDE "audio/music/get_item.asm"

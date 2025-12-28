@@ -1,4 +1,4 @@
-sfx_charge_shot_charging_1:
+sfx_charge_shot_charging:
 	sfx_priority 7
 
 ;1

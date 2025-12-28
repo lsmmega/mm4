@@ -40,6 +40,7 @@
 .INCLUDE "audio/sfx/mega_buster.asm"
 .INCLUDE "audio/sfx/charge_shot_charging_1.asm"
 .INCLUDE "audio/sfx/landing.asm"
+.INCLUDE "audio/sfx/megaman_hit.asm"
 .INCBIN  "audio/_audio_0.bin"
 .INCLUDE "audio/sfx/appearing_block.asm"
 .INCLUDE "audio/music/get_item.asm"

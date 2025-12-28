@@ -27,6 +27,7 @@
 .INCLUDE "audio/music/get_weapon.asm"
 .INCLUDE "audio/music/cossack3_4.asm"
 .INCLUDE "audio/music/wily3_4.asm"
+.INCLUDE "audio/sfx/flash_stopper.asm"
 .INCBIN  "audio/_audio_0.bin"
 .INCLUDE "audio/sfx/appearing_block.asm"
 .INCLUDE "audio/music/get_item.asm"

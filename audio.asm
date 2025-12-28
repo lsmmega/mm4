@@ -28,6 +28,7 @@
 .INCLUDE "audio/music/cossack3_4.asm"
 .INCLUDE "audio/music/wily3_4.asm"
 .INCBIN  "audio/_audio_0.bin"
+.INCLUDE "audio/sfx/appearing_block.asm"
 .INCLUDE "audio/music/get_item.asm"
 .INCLUDE "audio/music/wily_castle.asm"
 .INCLUDE "audio/music/cossack_castle.asm"

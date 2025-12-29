@@ -52,6 +52,7 @@
 .INCLUDE "audio/sfx/error.asm"
 .INCLUDE "audio/sfx/select.asm"
 .INCLUDE "audio/sfx/correct.asm"
+.INCLUDE "audio/sfx/open_menu.asm"
 .INCBIN  "audio/_audio_0.bin"
 .INCLUDE "audio/sfx/appearing_block.asm"
 .INCLUDE "audio/music/get_item.asm"

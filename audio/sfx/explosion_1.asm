@@ -1,4 +1,4 @@
-sfx_explosion:
+sfx_explosion_1:
 	sfx_priority 16
 
 ;1

@@ -47,6 +47,7 @@
 .INCLUDE "audio/sfx/explosion.asm"
 .INCLUDE "audio/sfx/refill.asm"
 .INCLUDE "audio/sfx/confirm.asm"
+.INCLUDE "audio/sfx/enemy_immune.asm"
 .INCBIN  "audio/_audio_0.bin"
 .INCLUDE "audio/sfx/appearing_block.asm"
 .INCLUDE "audio/music/get_item.asm"

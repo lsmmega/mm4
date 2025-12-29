@@ -66,7 +66,7 @@
 .INCLUDE "audio/music/wily_castle.asm"
 .INCLUDE "audio/music/cossack_castle.asm"
 .INCLUDE "audio/sfx/full_charge_shot.asm"
-.INCBIN  "audio/_audio_1.bin"
+.INCLUDE "audio/sfx/pharaoh_full_charge_shot.asm"
 .INCLUDE "audio/music/music_3f.asm"
 .INCLUDE "audio/sfx/wily_ufo.asm"
 .INCBIN  "audio/_audio_2.bin"

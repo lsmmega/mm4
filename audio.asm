@@ -70,7 +70,7 @@
 .INCLUDE "audio/music/music_3f.asm"
 .INCLUDE "audio/sfx/wily_ufo.asm"
 .INCLUDE "audio/sfx/teleport_out.asm"
-.INCBIN  "audio/_audio_2.bin"
+.INCLUDE "audio/sfx/sfx_42.asm"
 .INCLUDE "audio/music/opening2.asm"
 .INCLUDE "audio/music/wily_fighting.asm"
 .INCLUDE "audio/music/wily_defeated.asm"

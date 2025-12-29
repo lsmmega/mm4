@@ -43,6 +43,7 @@
 .INCLUDE "audio/sfx/megaman_hit.asm"
 .INCLUDE "audio/sfx/death.asm"
 .INCLUDE "audio/sfx/enemy_hit.asm"
+.INCLUDE "audio/sfx/charge_shot_full_charging_2.asm"
 .INCBIN  "audio/_audio_0.bin"
 .INCLUDE "audio/sfx/appearing_block.asm"
 .INCLUDE "audio/music/get_item.asm"

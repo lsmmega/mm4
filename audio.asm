@@ -58,6 +58,7 @@
 .INCLUDE "audio/sfx/teleport_in.asm"
 .INCLUDE "audio/sfx/sfx_34.asm"
 .INCLUDE "audio/sfx/get_weapon_font.asm"
+.INCLUDE "audio/sfx/warning.asm"
 .INCBIN  "audio/_audio_0.bin"
 .INCLUDE "audio/sfx/appearing_block.asm"
 .INCLUDE "audio/music/get_item.asm"

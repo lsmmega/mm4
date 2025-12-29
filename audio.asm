@@ -69,6 +69,7 @@
 .INCLUDE "audio/sfx/pharaoh_full_charge_shot.asm"
 .INCLUDE "audio/music/music_3f.asm"
 .INCLUDE "audio/sfx/wily_ufo.asm"
+.INCLUDE "audio/sfx/teleport_out.asm"
 .INCBIN  "audio/_audio_2.bin"
 .INCLUDE "audio/music/opening2.asm"
 .INCLUDE "audio/music/wily_fighting.asm"

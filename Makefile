@@ -66,6 +66,7 @@ home := \
 
 screen := \
 	screen.asm \
+	constants/* \
 	screen/* \
 	gfx/48/*.bmp \
 	gfx/49/*.bmp \

@@ -70,3 +70,4 @@ track_pointers:
 	.DBYT 0
 	.DBYT music_wily_fighting
 	.DBYT music_wily_defeated
+track_pointers_end:

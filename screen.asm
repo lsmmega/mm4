@@ -2,7 +2,7 @@
 .INCLUDE "constants/tsa.asm"
 .INCLUDE "screen/stage_select_capcom_logo_boss_show_weapon_license_scene_tsa.asm"
 .INCLUDE "screen/stage_select_capcom_logo_boss_show_weapon_license_scene_mapset.asm"
-.INCBIN  "screen/48.bin"
+.INCLUDE "screen/unused/unused_61110.asm"
 .INCBIN  "gfx/48/48.chr"
 
 .SEGMENT "BANK31"
@@ -13,7 +13,7 @@
 .SEGMENT "BANK32"
 .INCLUDE "screen/cossack_wily_castle_scene_tsa.asm"
 .INCLUDE "screen/cossack_wily_castle_scene_mapset.asm"
-.INCBIN  "screen/50.bin"
+.INCLUDE "screen/unused/unused_65110.asm"
 .INCBIN  "gfx/50/50.chr"
 
 .SEGMENT "BANK33"
@@ -24,4 +24,4 @@
 .SEGMENT "BANK34"
 .INCLUDE "screen/ending_scene_tsa.asm"
 .INCLUDE "screen/ending_scene_mapset.asm"
-.INCBIN  "screen/52.bin"
+.INCLUDE "screen/unused/unused_69110.asm"

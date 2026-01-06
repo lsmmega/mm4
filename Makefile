@@ -68,6 +68,7 @@ screen := \
 	screen.asm \
 	constants/* \
 	screen/* \
+	screen/unused/* \
 	gfx/48/*.bmp \
 	gfx/49/*.bmp \
 	gfx/50/*.bmp \
@@ -115,23 +116,28 @@ stages := \
 
 53 := \
 	53.asm \
-	53/*
+	53/* \
+	unused/*
 
 56 := \
 	56.asm \
-	56/*
+	56/* \
+	unused/*
 
 57 := \
 	57.asm \
-	57/*
+	57/* \
+	unused/*
 
 58 := \
 	58.asm \
-	58/*
+	58/* \
+	unused/*
 
 60 := \
 	60.asm \
-	60/*
+	60/* \
+	unused/*
 
 _gfx := \
 	gfx/0/0.bmp gfx/0/0.chr \

@@ -1,5 +1,7 @@
 .SEGMENT "HOME"
-.INCBIN  "home/home.bin"
+.INCBIN  "home/home_0.bin"
+.INCLUDE "home/sprites_bankswitch.asm"
+.INCBIN  "home/home_1.bin"
 ;.INCLUDE "home/reset.asm"
 ;.INCLUDE "home/irq.asm"
 ;.INCLUDE "home/nmi.asm"

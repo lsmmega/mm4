@@ -26,6 +26,7 @@ audio := \
 	audio.asm \
 	constants/* \
 	macros/* \
+	ram/* \
 	audio/* \
 	audio/music/* \
 	audio/sfx/* \

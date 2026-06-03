@@ -63,6 +63,7 @@ header := \
 
 home := \
 	home.asm \
+	constants/* \
 	home/*
 
 screen := \

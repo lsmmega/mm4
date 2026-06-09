@@ -1,9 +1,11 @@
+	.FEATURE FORCE_RANGE
 .SEGMENT "HOME"
 .INCLUDE "constants/button.asm"
 .INCLUDE "constants/nes.asm"
 .INCLUDE "ram/ram.asm"
 .INCBIN  "home/home_0_0.bin"
 .INCLUDE "home/joy.asm"
+.INCLUDE "home/init_ppu.asm"
 .INCBIN  "home/home_0_1.bin"
 .INCLUDE "home/sprites_bankswitch.asm"
 .INCBIN  "home/home_1.bin"

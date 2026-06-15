@@ -5,6 +5,12 @@
 	zjoy2_pressed_bits    = $15
 	zjoy1_pressed         = $16
 	zjoy2_pressed         = $17
+	zthread_flag          = $80
+	zthread_timer         = $81
+	zthread_pointer       = $82
+	zthread_handle_flag   = $90
+	zthread_joy_flag      = $91
+	zthread_jump_pointer  = $93
 	zgot_weapon_flag      = $A9
 	zplayback_flag        = $C0
 	zaudio_C1             = $C1

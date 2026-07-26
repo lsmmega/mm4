@@ -1,11 +1,10 @@
-audio_obj := \
-	audio.o
+bin_obj := \
+	mm4.o
 
 rom_obj := \
-	_audio.o \
 	gfx.o \
 	header.o \
-	home.o \
+	main.o \
 	screen.o \
 	sprites.o \
 	stages.o \
@@ -16,8 +15,11 @@ rom_obj := \
 	58.o \
 	60.o
 
-audio_cfg := \
-	audio.cfg
+mm4bin := \
+	mm4.asm
+
+mm4bin_cfg := \
+	mm4bin.cfg
 
 mm4_cfg := \
 	mm4.cfg
@@ -188,23 +190,20 @@ gfx_stages := \
 	gfx/46/46.bmp gfx/46/46.chr \
 	gfx/47/47.bmp gfx/47/47.chr
 
-.PHONY: all audio mm4 clean
+.PHONY: all bin mm4 clean
 
-all: audio mm4
-audio: audio.bin
+all: bin mm4
+bin: mm4.bin
 mm4: mm4.nes
 
-audio.bin: $(audio_obj) $(audio_cfg)
-	ld65 -C $(audio_cfg) $(audio_obj) -o $@
+%.nes: $(bin_obj) $(mm4bin_cfg)
+	ld65 -C $(mm4bin_cfg) $(bin_obj) -o $@
 
-%.nes: $(rom_obj) $(mm4_cfg)
-	ld65 -C $(mm4_cfg) $(rom_obj) -o $@ -m $*.map
+mm4.bin: $(rom_obj) $(mm4_cfg)
+	ld65 -C $(mm4_cfg) $(rom_obj) -o $@ -m mm4.map
 
-audio.o: $(audio)
-	ca65 audio.asm
-
-_audio.o: $(audio) $(audio_obj) $(audio_cfg)
-	ca65 _audio.asm
+mm4.o: $(rom_obj) $(mm4bin) $(mm4_cfg)
+	ca65 mm4.asm
 
 gfx.o: $(gfx)
 	bmp2nes $(_gfx)
@@ -213,8 +212,8 @@ gfx.o: $(gfx)
 header.o: $(header)
 	ca65 header.asm
 
-home.o: $(home)
-	ca65 home.asm
+main.o: $(audio) $(home)
+	ca65 main.asm
 
 screen.o: $(screen)
 	bmp2nes $(gfx_screen)
@@ -246,8 +245,8 @@ stages.o: $(stages)
 	ca65 60.asm
 
 clean:
-	$(RM) $(audio_obj) $(rom_obj) \
+	$(RM) $(rom_obj) \
 	gfx/*/*.chr \
 	*.nes \
 	*.map
-	find "audio.bin" -delete
+	find "mm4.bin" -delete

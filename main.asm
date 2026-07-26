@@ -1,0 +1,5 @@
+.INCLUDE "constants/mmc3.asm"
+.INCLUDE "constants/nes.asm"
+.INCLUDE "ram/ram.asm"
+.INCLUDE "audio.asm"
+.INCLUDE "home.asm"

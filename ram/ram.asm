@@ -42,6 +42,15 @@
 	zsfx_queue_index_undo = $DB
 	zsfx_queue            = $DC
 	zrender_flag          = $EA
+	zaudio_bankswitch_x   = $ED
+	zaudio_bankswitch_y   = $EE
+	zbank_select          = $F2
+	zbank_data_1          = $F3
+	zbank_data_2          = $F4
+	zbank_data_1_undo     = $F5
+	zbank_data_2_undo     = $F6
+	zbankswitching        = $F7
+	zaudio_bankswitching  = $F8
 	zppu_mask             = $FE
 	zppu_ctrl             = $FF
 

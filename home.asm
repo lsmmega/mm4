@@ -1,9 +1,7 @@
 	.FEATURE FORCE_RANGE
 .SEGMENT "HOME"
 .INCLUDE "constants/button.asm"
-.INCLUDE "constants/nes.asm"
 .INCLUDE "macros/stack.asm"
-.INCLUDE "ram/ram.asm"
 .INCBIN  "home/home_0_0.bin"
 .INCLUDE "home/render.asm"
 .INCLUDE "home/joy.asm"
@@ -14,6 +12,7 @@
 .INCLUDE "home/audio_queue.asm"
 .INCBIN  "home/home_2.bin"
 .INCLUDE "home/thread.asm"
+.INCLUDE "home/bankswitch.asm"
 .INCBIN  "home/home_3.bin"
 ;.INCLUDE "home/reset.asm"
 ;.INCLUDE "home/irq.asm"

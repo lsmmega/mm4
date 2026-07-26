@@ -41,6 +41,8 @@
 	zsfx_queue_index      = $DA
 	zsfx_queue_index_undo = $DB
 	zsfx_queue            = $DC
+	zrender_flag          = $EA
+	zppu_mask             = $FE
 	zppu_ctrl             = $FF
 
 	achannel_instrument        = $700

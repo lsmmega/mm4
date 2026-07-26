@@ -5,6 +5,7 @@
 .INCLUDE "macros/stack.asm"
 .INCLUDE "ram/ram.asm"
 .INCBIN  "home/home_0_0.bin"
+.INCLUDE "home/render.asm"
 .INCLUDE "home/joy.asm"
 .INCLUDE "home/init_ppu.asm"
 .INCBIN  "home/home_0_1.bin"

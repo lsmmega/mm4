@@ -1,36 +1,36 @@
 IRQ:
-	.ORG $C149
-
 	PHP
 	PHA
-	TXA
-	PHA
-	TYA
-	PHA
-	STA $E000
-	STA $E001
-	JMP ($009C)
+	PHX
+	PHY
+	STA irq_disable
+	STA irq_enable
+	JMP (zirq_pointer)
+
+_irq_kabatoncue_1:
 	LDA PPU_STATUS
 	LDA #$28
 	STA PPU_ADDRESS
 	LDA #$80
 	STA PPU_ADDRESS
-	LDA $5E
+	LDA z:zirq_kabatoncue_xcoord
 	STA PPU_SCROLL
 	LDA #$00
 	STA PPU_SCROLL
-	LDA $FF
-	ORA #$02
+	LDA z:zppu_ctrl
+	ORA #nametable_bottom_left
 	STA PPU_CTRL
 	LDA #$BE
 	SEC
-	SBC $5C
-	STA $C000
-	LDA #$89
-	STA $9C
-	LDA #$C1
-	STA $9D
-	JMP label_1
+	SBC z:zscanline
+	STA irq_latch
+	LDA #<_irq_kabatoncue_2
+	STA z:zirq_pointer
+	LDA #>_irq_kabatoncue_2
+	STA z:zirq_pointer + 1
+	JMP _irq_next
+
+_irq_kabatoncue_2:
 	LDA PPU_STATUS
 	LDA #$23
 	STA PPU_ADDRESS
@@ -39,10 +39,12 @@ IRQ:
 	LDA #$00
 	STA PPU_SCROLL
 	STA PPU_SCROLL
-	LDA $FF
-	AND #$FC
+	LDA z:zppu_ctrl
+	AND #~all_nametable
 	STA PPU_CTRL
-	JMP label_2
+	JMP _irq_done
+
+_irq_moby_1:
 	LDA PPU_STATUS
 	LDA #$21
 	STA PPU_ADDRESS
@@ -53,169 +55,208 @@ IRQ:
 	STA PPU_SCROLL
 	LDA #$A0
 	SEC
-	SBC $5C
-	STA $C000
-	LDA #$D0
-	STA $9C
-	LDA #$C1
-	STA $9D
-	JMP label_1
+	SBC z:zscanline
+	STA irq_latch
+	LDA #<_irq_moby_2
+	STA z:zirq_pointer
+	LDA #>_irq_moby_2
+	STA z:zirq_pointer + 1
+	JMP _irq_next
+
+_irq_moby_2:
 	LDA PPU_STATUS
 	LDA #$22
 	STA PPU_ADDRESS
 	LDA #$80
 	STA PPU_ADDRESS
-	JMP label_3
+	JMP _irq_screen_coord_common
+
+_irq_mothraya:
 	LDA PPU_STATUS
 	LDA #$80
 	LDY #$22
-	BNE label_4
+	BNE _irq_front_screen_common
+
+_irq_dustman_press:
 	LDA PPU_STATUS
-	LDA $66
+	LDA z:zscreen_xcoord
 	LSR
 	LSR
 	LSR
-	AND #$1F
+	AND #%00011111
 	ORA #$00
 	LDY #$23
 	STY PPU_ADDRESS
 	STA PPU_ADDRESS
-	LDA $FF
+	LDA z:zppu_ctrl
 	STA PPU_CTRL
-label_3
-	LDA $66
+
+_irq_screen_coord_common:
+	LDA z:zscreen_xcoord
 	STA PPU_SCROLL
-	LDA $65
+	LDA z:zscreen_ycoord
 	STA PPU_SCROLL
-	JMP label_2
+	JMP _irq_done
+
+_irq_diveman_water:
 	LDA PPU_STATUS
-	LDA $66
+	LDA z:zscreen_xcoord
 	LSR
 	LSR
 	LSR
-	AND #$1F
+	AND #%00011111
 	ORA #$E0
 	LDY #$21
 	STY PPU_ADDRESS
 	STA PPU_ADDRESS
-	LDA $FF
+	LDA z:zppu_ctrl
 	STA PPU_CTRL
-	LDA $66
+	LDA z:zscreen_xcoord
 	STA PPU_SCROLL
-	LDA $65
+	LDA z:zscreen_ycoord
 	STA PPU_SCROLL
-	JMP label_2
+	JMP _irq_done
+
+_irq_cossack_watcher:
 	LDA PPU_STATUS
 	LDA #$40
 	LDY #$22
-label_4
+
+_irq_front_screen_common:
 	STY PPU_ADDRESS
 	STA PPU_ADDRESS
-	LDA $FF
+
+_irq_square_machine_3:
+	LDA z:zppu_ctrl
 	STA PPU_CTRL
 	LDA #$00
 	STA PPU_SCROLL
 	STA PPU_SCROLL
-	JMP label_2
+	JMP _irq_done
+
+_irq_square_machine_1:
 	CLC
 	LDA PPU_STATUS
-	LDA $66
-	EOR #$FF
+	LDA z:zscreen_xcoord
+	EOR #%11111111
 	ADC #$01
 	STA PPU_SCROLL
 	LDA #$00
 	STA PPU_SCROLL
-	LDA $67
-	EOR #$FF
+	LDA z:znametable
+	EOR #%11111111
 	ADC #$00
-	AND #$01
-	ORA $FF
+	AND #nametable_top_right
+	ORA z:zppu_ctrl
 	STA PPU_CTRL
 	LDA #$4F
-	STA $C000
-	LDA #$81
-	STA $9C
-	LDA #$C2
-	STA $9D
-	JMP label_1
+	STA irq_latch
+	LDA #<_irq_square_machine_2
+	STA z:zirq_pointer
+	LDA #>_irq_square_machine_2
+	STA z:zirq_pointer + 1
+	JMP _irq_next
+
+_irq_square_machine_2:
 	LDA PPU_STATUS
-	LDA $66
+	LDA z:zscreen_xcoord
 	STA PPU_SCROLL
-	LDA $FF
-	ORA $67
+	LDA z:zppu_ctrl
+	ORA z:znametable
 	STA PPU_CTRL
 	LDA #$2F
-	STA $C000
-	LDA #$42
-	STA $9C
-	LDA #$C2
-	STA $9D
-	JMP label_1
+	STA irq_latch
+	LDA #<_irq_square_machine_3
+	STA z:zirq_pointer
+	LDA #>_irq_square_machine_3
+	STA z:zirq_pointer + 1
+	JMP _irq_next
+
+_irq_cossack_dialog:
 	LDA PPU_STATUS
 	LDA #$00
 	LDY #$28
 	STY PPU_ADDRESS
 	STA PPU_ADDRESS
-	LDA $FF
-	ORA #$01
+	LDA z:zppu_ctrl
+	ORA #nametable_top_right
 	STA PPU_CTRL
 	LDA #$00
 	STA PPU_SCROLL
 	STA PPU_SCROLL
-	JMP label_2
+	JMP _irq_done
+
+_irq_metall_daddy_wily_machine_4:
 	LDA PPU_STATUS
 	LDA #$00
 	LDY #$23
 	STY PPU_ADDRESS
 	STA PPU_ADDRESS
-	LDA $FF
+	LDA z:zppu_ctrl
 	STA PPU_CTRL
 	LDA #$00
 	STA PPU_SCROLL
 	STA PPU_SCROLL
-	JMP label_2
+	JMP _irq_done
+
+_irq_opening_ending_1:
 	LDA PPU_STATUS
-	LDA $FF
+	LDA z:zppu_ctrl
 	STA PPU_CTRL
-	LDA $FC
+	LDA z:zscreen_xcoord_undo
 	STA PPU_SCROLL
-	LDA $FA
+	LDA z:zscreen_ycoord_undo
 	STA PPU_SCROLL
 	LDA #$28
-	STA $C000
-	LDA #$FE
-	STA $9C
-	LDA #$C2
-	STA $9D
-	JMP label_1
+	STA irq_latch
+	LDA #<_irq_opening_ending_2
+	STA z:zirq_pointer
+	LDA #>_irq_opening_ending_2
+	STA z:zirq_pointer + 1
+	JMP _irq_next
+
+_irq_opening_ending_2:
 	LDA PPU_STATUS
-	LDA $FF
+	LDA z:zppu_ctrl
 	STA PPU_CTRL
 	LDA #$00
 	STA PPU_SCROLL
 	STA PPU_SCROLL
-label_2
-	STA $E000
-label_1
-	PLA
-	TAY
-	PLA
-	TAX
+
+_irq_done:
+	STA irq_disable
+
+_irq_next:
+	PLY
+	PLX
 	PLA
 	PLP
 	RTI
-	ASL $A858
-	CPX #$E9
-	.HEX 0F
-	AND $52,X
-	LDY #$BF
-	INC $C3DC,X
-	CMP ($C1,X)
-	CMP ($C1,X)
-	.HEX C2
-	.HEX C2
-	.HEX C2
-	.HEX C2
-	.HEX C2
-	.HEX C2
-	.HEX C2
+
+irq_lo_pointers:
+	.LOBYTES _irq_done
+	.LOBYTES _irq_kabatoncue_1
+	.LOBYTES _irq_moby_1
+	.LOBYTES _irq_mothraya
+	.LOBYTES _irq_dustman_press
+	.LOBYTES _irq_diveman_water
+	.LOBYTES _irq_cossack_watcher
+	.LOBYTES _irq_square_machine_1
+	.LOBYTES _irq_cossack_dialog
+	.LOBYTES _irq_metall_daddy_wily_machine_4
+	.LOBYTES _irq_opening_ending_2
+	.LOBYTES _irq_opening_ending_1
+
+irq_hi_pointers:
+	.HIBYTES _irq_done
+	.HIBYTES _irq_kabatoncue_1
+	.HIBYTES _irq_moby_1
+	.HIBYTES _irq_mothraya
+	.HIBYTES _irq_dustman_press
+	.HIBYTES _irq_diveman_water
+	.HIBYTES _irq_cossack_watcher
+	.HIBYTES _irq_square_machine_1
+	.HIBYTES _irq_cossack_dialog
+	.HIBYTES _irq_metall_daddy_wily_machine_4
+	.HIBYTES _irq_opening_ending_2
+	.HIBYTES _irq_opening_ending_1

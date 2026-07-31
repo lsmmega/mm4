@@ -1,182 +1,185 @@
 NMI:
-	.ORG $C000
-
-label_10
 	PHP
-label_11
 	PHA
-	TXA
-	PHA
-	TYA
-	PHA
-	LDA $EA
-	BEQ label_1
-	LDA $F1
-	STA $5C
+	PHX
+	PHY
+	LDA z:zrender_flag
+	BEQ @rendering
+	LDA z:zscanline_undo
+	STA z:zscanline
 	LDA #$00
-	STA $5D
-	JMP label_2
-label_1
-	LDA $9A
-	BEQ label_3
-	LDA $FF
-	AND #$78
+	STA z:zirq_index
+	JMP @disable_1
+
+@rendering:
+	LDA z:zscreen_pause_flag
+	BEQ @unpause
+	LDA z:zppu_ctrl
+	AND #~(all_nametable | draw_vertical | nmi_enable)
 	STA PPU_CTRL
 	LDA #$00
 	STA PPU_MASK
-	JMP label_4
-label_3
-	LDA $FA
-	STA $65
-	LDA $FC
-	STA $66
-	LDA $FD
-	STA $67
-	LDA $F1
-	STA $5C
-	LDA $F0
-	STA $5D
+	JMP @move_screen
+
+@unpause:
+	LDA z:zscreen_ycoord_undo
+	STA z:zscreen_ycoord
+	LDA z:zscreen_xcoord_undo
+	STA z:zscreen_xcoord
+	LDA z:znametable_undo
+	STA z:znametable
+	LDA z:zscanline_undo
+	STA z:zscanline
+	LDA z:zirq_index_undo
+	STA z:zirq_index
 	CMP #$03
-	BEQ label_5
+	BEQ @true
 	CMP #$06
-	BEQ label_5
+	BEQ @true
 	CMP #$07
-	BEQ label_5
+	BEQ @true
 	CMP #$09
-	BCC label_6
-label_5
-	LDA $69
-	STA $66
-	LDA $6A
-	STA $67
-label_6
-	LDA $FF
-	AND #$78
+	BCC @not_opening_ending
+
+@true:
+	LDA z:zirq_xcoord
+	STA z:zscreen_xcoord
+	LDA z:zirq_nametable
+	STA z:znametable
+
+@not_opening_ending:
+	LDA z:zppu_ctrl
+	AND #~(all_nametable | draw_vertical | nmi_enable)
 	STA PPU_CTRL
 	LDA #$00
 	STA PPU_MASK
 	STA PPU_OAM_ADDR
 	LDA #$02
 	STA OAM_DMA
-	LDA $19
-	BEQ label_7
-	JSR $C330
-label_7
-	LDA $1A
-	BEQ label_8
-	LDA $FF
-	AND #$7F
-	ORA #$04
+	LDA z:zscreen_update_flag
+	BEQ @no_screen_update
+	JSR _screen_update_init
+
+@no_screen_update:
+	LDA z:zdraw_vertical_flag
+	BEQ @no_draw_vertical
+	LDA z:zppu_ctrl
+	AND #~nmi_enable
+	ORA #draw_vertical
 	STA PPU_CTRL
 	LDX #$00
-	STX $1A
-	JSR $C334
-	LDA $FF
-	AND #$7F
+	STX z:zdraw_vertical_flag
+	JSR _screen_update
+	LDA z:zppu_ctrl
+	AND #~nmi_enable
 	STA PPU_CTRL
-label_8
-	LDA $18
-	BEQ label_4
+
+@no_draw_vertical:
+	LDA z:zpalette_update_flag
+	BEQ @no_palette_update
 	LDX #$00
-	STX $18
+	STX z:zpalette_update_flag
 	LDA PPU_STATUS
 	LDA #$3F
 	STA PPU_ADDRESS
 	STX PPU_ADDRESS
 	LDY #$20
-label_9
-	LDA $0600,X
+
+@loop_1:
+	LDA acurrent_background_palette, X
 	STA PPU_DATA
 	INX
 	DEY
-	BNE label_9
+	BNE @loop_1
 	LDA #$3F
 	STA PPU_ADDRESS
 	STY PPU_ADDRESS
 	STY PPU_ADDRESS
 	STY PPU_ADDRESS
-label_4
+
+@move_screen:
+@no_palette_update:
 	LDA PPU_STATUS
-	LDA $66
+	LDA z:zscreen_xcoord
 	STA PPU_SCROLL
-	LDA $65
+	LDA z:zscreen_ycoord
 	STA PPU_SCROLL
-	LDA $FE
+	LDA z:zppu_mask
 	STA PPU_MASK
-	LDA $67
-	AND #$03
-	ORA $FF
+	LDA z:znametable
+	AND #all_nametable
+	ORA z:zppu_ctrl
 	STA PPU_CTRL
-label_2
-	LDA $5C
-	STA label_10
-	STA label_11
-	LDX $9B
-	STA $E000,X
-	BEQ label_12
-	LDX $5D
-	LDA $C318,X
-	STA $9C
-	LDA $C324,X
-	STA $9D
-label_12
-	INC $92
+
+@disable_1:
+	LDA z:zscanline
+	STA irq_latch
+	STA irq_reload
+	LDX z:zirq_flag
+	STA irq_disable, X
+	BEQ @disable_2
+	LDX z:zirq_index
+	LDA irq_lo_pointers, X
+	STA z:zirq_pointer
+	LDA irq_hi_pointers, X
+	STA z:zirq_pointer + 1
+
+@disable_2:
+	INC z:znmi_frame
 	LDX #$FF
-	STX $90
+	STX z:zthread_handle_flag
 	INX
 	LDY #$04
-label_14
-	LDA $80,X
+
+@loop_2:
+	LDA z:zthread_flag, X
 	CMP #$01
-	BNE label_13
-	DEC $81,X
-	BNE label_13
+	BNE @nz
+	DEC z:zthread_timer, X
+	BNE @nz
 	LDA #$04
-	STA $80,X
-label_13
+	STA z:zthread_flag, X
+
+@nz:
 	INX
 	INX
 	INX
 	INX
 	DEY
-	BNE label_14
+	BNE @loop_2
 	TSX
-	LDA $0107,X
-	STA $E9
-	LDA $0106,X
-	STA $E8
-	LDA #$C1
-	STA $0107,X
-	LDA #$27
-	STA $0106,X
-	PLA
-	TAY
-	PLA
-	TAX
+	LDA astack - $F8, X
+	STA z:zreturn_pointer + 1
+	LDA astack - $F9, X
+	STA z:zreturn_pointer
+	LDA #>_nmi_handle_audio
+	STA astack - $F8, X
+	LDA #<_nmi_handle_audio
+	STA astack - $F9, X
+	PLY
+	PLX
 	PLA
 	PLP
 	RTI
+
+_nmi_handle_audio:
 	PHP
 	PHP
 	PHP
 	PHA
-	TXA
-	PHA
-	TYA
-	PHA
+	PHX
+	PHY
 	TSX
 	SEC
-	LDA $E8
+	LDA z:zreturn_pointer
 	SBC #$01
-	STA $0105,X
-	LDA $E9
+	STA astack - $FA, X
+	LDA z:zreturn_pointer + 1
 	SBC #$00
-	STA $0106,X
-	JSR $FF5C
-	PLA
-	TAY
-	PLA
-	TAX
+	STA astack - $F9, X
+	JSR _audio_bankswitch
+	PLY
+	PLX
 	PLA
 	PLP
 	RTS

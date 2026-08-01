@@ -54,7 +54,7 @@ NMI:
 	LDA #$00
 	STA PPU_MASK
 	STA PPU_OAM_ADDR
-	LDA #$02
+	LDA #oam_hi_addr
 	STA OAM_DMA
 	LDA z:zscreen_update_flag
 	BEQ @no_screen_update
